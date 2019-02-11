@@ -1,19 +1,24 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+resources:
+  pipelines:
+  - pipeline: MyPipeline1
+    project: p1
+    source: p1-CI
+  - pipeline: MyPipeline2
+    project: p1
+    source: p1-CI2
 
-trigger:
-- master
+jobs:
+- job: download_specific_artifact1
+  displayName: download specific artifact1
+  pool:
+    name: Default
+  steps:
+    - download: MyPipeline1
 
-pool:
-  vmImage: 'Ubuntu-16.04'
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- job: download_specific_artifact2
+  displayName: download specific artifact2
+  dependsOn: download_specific_artifact1
+  pool:
+    name: Default
+  steps:
+    - download: MyPipeline2
