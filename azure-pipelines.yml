@@ -10,4 +10,9 @@ jobs:
   displayName: download specific artifact1
   pool:
     name: Default
-
+  steps:
+    - task: PublishBuildArtifacts@1
+      displayName: Artifact1
+      inputs:
+        pathToPublish: 'bd.yml'
+        artifactName: ArtifactInGHYaml
