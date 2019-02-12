@@ -12,7 +12,7 @@ jobs:
     name: Default
   steps:
     - task: PublishBuildArtifacts@1
-      displayName: Artifact1
+      displayName: ArtifactInGHYaml
       inputs:
         pathToPublish: 'README.md'
         artifactName: ArtifactInGHYaml
