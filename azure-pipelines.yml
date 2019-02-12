@@ -1,5 +1,5 @@
 resources:
-  Repositories:
+  repositories:
   - repository: secondaryRepo      
     type: Git
 
