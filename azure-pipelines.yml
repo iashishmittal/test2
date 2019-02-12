@@ -1,8 +1,9 @@
 resources:
   repositories:
   - repository: secondaryRepo      
-    type: AzureRepos
+    type: Git
     name: p1
+    source: p1
 
 jobs:
 - job: download_specific_artifact1
