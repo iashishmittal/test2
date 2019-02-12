@@ -2,6 +2,7 @@ resources:
   repositories:
   - repository: secondaryRepo      
     type: Git
+    name: p1
 
 jobs:
 - job: download_specific_artifact1
