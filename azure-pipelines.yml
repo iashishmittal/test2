@@ -9,5 +9,4 @@ jobs:
   displayName: download specific artifact1
   pool:
     name: Default
-  steps:
-    - checkout: secondaryRepo
+
