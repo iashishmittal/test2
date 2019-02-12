@@ -14,5 +14,5 @@ jobs:
     - task: PublishBuildArtifacts@1
       displayName: Artifact1
       inputs:
-        pathToPublish: 'bd.yml'
+        pathToPublish: 'README.md'
         artifactName: ArtifactInGHYaml
