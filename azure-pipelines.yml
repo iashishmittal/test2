@@ -1,11 +1,7 @@
 resources:
-  pipelines:
-  - pipeline: MyPipeline1
-    project: p1
-    source: p1-CI
-  - pipeline: MyPipeline2
-    project: p1
-    source: p1-CI2
+  Repositories:
+  - repository: secondaryRepo      
+    type: Git
 
 jobs:
 - job: download_specific_artifact1
@@ -13,12 +9,4 @@ jobs:
   pool:
     name: Default
   steps:
-    - download: MyPipeline1
-
-- job: download_specific_artifact2
-  displayName: download specific artifact2
-  dependsOn: download_specific_artifact1
-  pool:
-    name: Default
-  steps:
-    - download: MyPipeline2
+    - checkout: secondaryRepo
