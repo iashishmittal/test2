@@ -1,7 +1,7 @@
 resources:
   repositories:
   - repository: secondaryRepo      
-    type: Git
+    type: AzureRepos
     name: p1
 
 jobs:
